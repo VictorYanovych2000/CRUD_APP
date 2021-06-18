@@ -1,8 +1,6 @@
 import React from 'react';
 import {Redirect, Route, Switch, useLocation} from 'react-router-dom';
-
 import GlobalStyles from './styles/global.styles';
-
 import Header from './shared/components/header/header.component';
 import DashboardPage from './dashboard/pages/dashboard/dashboard.component';
 import SignUpPage from './auth/pages/sign-up/sign-up.component';
@@ -10,7 +8,6 @@ import SignInPage from './auth/pages/sign-in/sign-in.component';
 import UsersPage from './users/pages/users.component';
 import ProfilesPage from './profiles/pages/profiles.component';
 import UserPage from './users/pages/user.component';
-
 import {AuthContext} from './shared/context/auth.context';
 import {useAuth} from './hooks/auth.hook';
 

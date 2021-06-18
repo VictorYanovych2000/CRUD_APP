@@ -1,22 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import WidgetsGrid from '../../components/widgets-grid/widgets-grid.component';
 import WidgetCard from '../../components/widget-card/widget-card.component';
-import { AuthContext } from '../../../shared/context/auth.context';
+import {AuthContext} from '../../../shared/context/auth.context';
 
 const DashboardPage = () => {
   const auth = useContext(AuthContext);
-
   const [usersCount, setUsersCount] = useState(0);
   const [profilesCount, setProfilesCount] = useState(0);
   const [adultUsersCount, setAdultUsersCount] = useState(0);
-
   const requestOptions = {
     method: 'GET',
     headers: { Authorization: `Bearer ${auth.token}` }
   };
 
+
   useEffect(() => {
-    fetch('http://localhost:5000/api/users/count')
+    fetch(process.env.REACT_APP_BACKEND_URL +`/users/count`)
       .then(res => res.json())
       .then(result => {
           const { count } = result;
@@ -27,7 +26,7 @@ const DashboardPage = () => {
         }
       );
 
-    fetch('http://localhost:5000/api/profiles/count', requestOptions)
+    fetch(process.env.REACT_APP_BACKEND_URL + `/profiles/count`, requestOptions)
       .then(res => res.json())
       .then(result => {
           const { count } = result;
@@ -38,7 +37,7 @@ const DashboardPage = () => {
         }
       );
 
-    fetch('http://localhost:5000/api/profiles/adultCount', requestOptions)
+    fetch(process.env.REACT_APP_BACKEND_URL + '/profiles/adultCount', requestOptions)
       .then(res => res.json())
       .then(result => {
           const { adultCount } = result;

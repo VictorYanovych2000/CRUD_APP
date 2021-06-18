@@ -1,5 +1,4 @@
 import React from 'react';
-import {} from './svg-style.css';
 
 const SvgDashboard = () => {
     return (
