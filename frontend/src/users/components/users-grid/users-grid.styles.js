@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const UsersGrid = styled.div`
+export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 396px));
   grid-column-gap: 32px;

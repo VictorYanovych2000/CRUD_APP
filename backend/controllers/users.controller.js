@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
-const HttpError = require("../models/http-error.modle");
+const HttpError = require("../middleware/http-error.modle");
 const User = require("../models/user");
 const Profile = require("../models/profile");
 

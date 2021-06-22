@@ -1,8 +1,8 @@
 import React from 'react';
-import * as S from './users-grid.styles';
+import {Grid} from './users-grid.styles';
 
 const UsersGrid = ({children}) => {
-    return <S.UsersGrid>{children}</S.UsersGrid>;
+    return <Grid>{children}</Grid>;
 };
 
 export default UsersGrid;

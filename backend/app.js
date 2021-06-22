@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const HttpError = require("./models/http-error.modle");
+const HttpError = require("./middleware/http-error.modle");
 const profilesRoutes = require("./routes/profiles.route");
 const usersRoutes = require("./routes/users.route");
 const app = express();
@@ -32,7 +32,6 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "Unexpected error occurred" });
 });
 
- console.log(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGO_HOSTNAME}/${process.env.MONGO_DB}`)
 mongoose
   .connect(
       `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGO_HOSTNAME}/${process.env.MONGO_DB}`,

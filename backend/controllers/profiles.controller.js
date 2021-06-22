@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 const mongoose = require("mongoose");
 const { validationResult } = require("express-validator");
-const HttpError = require("../models/http-error.modle");
+const HttpError = require("../middleware/http-error.modle");
 const Profile = require("../models/profile");
 const User = require("../models/user");
 
