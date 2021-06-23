@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import * as S from './header.styles';
+import {Header, HeaderContent, Avatar} from './header.styles';
 import {AuthContext} from '../../context/auth.context';
 import {StyledLink} from "./header.styles";
 import SvgDashboard from "../svg/svg-dashboard";
@@ -10,10 +10,10 @@ const Header = () => {
     const auth = useContext(AuthContext);
 
     return (
-        <S.Header>
+        <Header>
             <div className={'container'}>
-                <S.HeaderContent>
-                    <S.Avatar role={auth.role}>
+                <HeaderContent>
+                    <Avatar role={auth.role}>
                         <div>
                             <img
                                 src={
@@ -23,7 +23,7 @@ const Header = () => {
                             />
                         </div>
                         <span>{auth.email}</span>
-                    </S.Avatar>
+                    </Avatar>
                     <nav>
                         <ul>
                             <li>
@@ -44,9 +44,9 @@ const Header = () => {
                         </ul>
                     </nav>
                     <div onClick={() => auth.logout()}>Logout</div>
-                </S.HeaderContent>
+                </HeaderContent>
             </div>
-        </S.Header>
+        </Header>
     );
 };
 

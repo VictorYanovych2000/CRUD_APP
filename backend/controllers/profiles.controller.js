@@ -2,8 +2,8 @@ const { v4: uuidv4 } = require("uuid");
 const mongoose = require("mongoose");
 const { validationResult } = require("express-validator");
 const HttpError = require("../middleware/http-error.modle");
-const Profile = require("../models/profile");
-const User = require("../models/user");
+const Profile = require("../middleware/profileSchema");
+const User = require("../middleware/userSchema");
 
 const getProfilesByUserId = async (req, res, next) => {
   const userId = req.params.uid;

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import * as S from './user-info.styles';
+import {UserInfo} from './user-info.styles';
 import EditUser from '../edit-user/edit-user.component';
 import {useHttpClient} from '../../../hooks/http.hook';
 import {AuthContext} from '../../../shared/context/auth.context';
@@ -30,7 +30,7 @@ const UserInfo = ({user, setUser}) => {
     };
 
     return (
-        <S.UserInfo>
+        <UserInfo>
             <UserInfoText>{user.username}</UserInfoText>
             <UserInfoText>{user.email}</UserInfoText>
             <UserInfoText isRole>{user.role}</UserInfoText>
@@ -45,7 +45,7 @@ const UserInfo = ({user, setUser}) => {
                 )}
             </div>
             {open && <EditUser setOpen={setOpen} user={user} setUser={setUser}/>}
-        </S.UserInfo>
+        </UserInfo>
     );
 };
 

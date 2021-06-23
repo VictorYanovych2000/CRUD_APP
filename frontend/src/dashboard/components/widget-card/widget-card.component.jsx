@@ -1,13 +1,13 @@
 import React from 'react';
 
-import * as S from './widget-card.styles';
+import {WidgetCard} from './widget-card.styles';
 
 const WidgetCard = ({ title, amount }) => {
   return (
-    <S.WidgetCard>
+    <WidgetCard>
       <h3>{title}:</h3>
       <span>{amount}</span>
-    </S.WidgetCard>
+    </WidgetCard>
   );
 };
 
