@@ -4,9 +4,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
-const HttpError = require("../middleware/http-error.modle");
-const User = require("../middleware/userSchema");
-const Profile = require("../middleware/profileSchema");
+const HttpError = require("../http-error.modle/http-error.modle");
+const User = require("../models/userSchema");
+const Profile = require("../models/profileSchema");
 
 const getUserById = async (req, res, next) => {
     const userId = req.params.uid;
